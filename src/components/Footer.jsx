@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="flex items-center gap-4">
           <a className="hover:text-white" href="#home">Top</a>
           <a className="hover:text-white" href="https://github.com/sanchit2405" target="_blank" rel="noreferrer">GitHub</a>
-          <a className="hover:text-white" href="/assets/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+          <a className="hover:text-white" href="/My-Portfolio/assets/resume.pdf " target="_blank" rel="noopener noreferrer">Resume</a>
         </div>
       </div>
     </footer>
