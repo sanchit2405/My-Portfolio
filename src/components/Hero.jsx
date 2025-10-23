@@ -8,18 +8,19 @@ export default function Hero() {
   const typingSpeed = 150; // ms per character
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setDisplayedName(fullName.slice(0, index + 1));
-      setIndex((prev) => (prev + 1) % (fullName.length + 1));
-    }, typingSpeed);
-
-    return () => clearTimeout(timer);
+    if (index < fullName.length) {
+      const timer = setTimeout(() => {
+        setDisplayedName(fullName.slice(0, index + 1));
+        setIndex((prev) => prev + 1);
+      }, typingSpeed);
+      return () => clearTimeout(timer);
+    }
   }, [index, fullName]);
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
-      const navbarOffset = 80; 
+      const navbarOffset = 80;
       const elementPosition = element.getBoundingClientRect().top + window.scrollY;
       window.scrollTo({
         top: elementPosition - navbarOffset,
@@ -29,10 +30,7 @@ export default function Hero() {
   };
 
   const taglineItems = [
-    {
-      text: "B.Tech CSE Student",
-      
-    },
+    { text: "B.Tech CSE Student" },
     { text: "Tech Explorer" },
     { text: "Problem Solver" },
     { text: "Lifelong Learner" },
@@ -65,7 +63,6 @@ export default function Hero() {
             <span
               key={idx}
               className="hover:text-brand-400 hover:scale-110 transition-transform cursor-pointer"
-              onClick={() => item.alert && alert(item.alert)}
             >
               {item.text}
               {idx < taglineItems.length - 1 && " | "}
@@ -75,20 +72,26 @@ export default function Hero() {
 
         <motion.div
           initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}  
+          animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
           className="mt-8 flex items-center justify-center gap-3 flex-wrap"
         >
           <a
             href="#projects"
-            onClick={(e) => { e.preventDefault(); scrollToSection("projects"); }}
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("projects");
+            }}
             className="inline-flex items-center rounded-full bg-brand-600 px-5 py-2.5 font-medium text-white shadow hover:shadow-glow transition-shadow"
           >
             View Projects
           </a>
           <a
             href="#connect"
-            onClick={(e) => { e.preventDefault(); scrollToSection("connect"); }}
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("connect");
+            }}
             className="inline-flex items-center rounded-full border border-neutral-700 px-5 py-2.5 font-medium text-neutral-200 hover:border-brand-500/60 transition-colors"
           >
             Connect
@@ -105,20 +108,20 @@ export default function Hero() {
           {[
             [
               "Coding Skills",
-              "Passionate about solving problems with C, C++, and Python; exploring web development basics."
+              "Passionate about solving problems with C, C++, and Python; exploring web development basics.",
             ],
             [
               "AI & Web",
-              "Exploring AI concepts and web technologies; constantly learning and experimenting."
+              "Exploring AI concepts and web technologies; constantly learning and experimenting.",
             ],
             [
               "Goals",
-              "Aspiring to apply strong mathematical and problem-solving skills to develop impactful and efficient tech solutions and projects."
+              "Aspiring to apply strong mathematical and problem-solving skills to develop impactful and efficient tech solutions and projects.",
             ],
             [
               "Soft Skills",
-              "Strong communicator and team player; quick learner with a problem-solving mindset, adaptable to any challenge."
-            ]
+              "Strong communicator and team player; quick learner with a problem-solving mindset, adaptable to any challenge.",
+            ],
           ].map(([title, text]) => (
             <div
               key={title}
@@ -141,7 +144,7 @@ export default function Hero() {
           0%, 50%, 100% { opacity: 1; }
           25%, 75% { opacity: 0; }
         }
-      `}</style>  
+      `}</style>
     </div>
   );
 }
