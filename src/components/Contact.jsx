@@ -10,7 +10,7 @@ export default function Contact() {
     { name: "GitHub", icon: <FaGithub size={40} />, url: "https://github.com/sanchit2405" },
     { name: "LinkedIn", icon: <FaLinkedin size={40} color="#0A66C2" />, url: "https://www.linkedin.com/in/sanchit-vashisth-5abb57287/" },
     { name: "Email", icon: <MdEmail size={40} color="#D44638" />, url: "mailto:svashisth2405@gmail.com" },
-    { name: "Resume", icon: <HiDocumentText size={40} color="#90EE90" />, url: "/My-Portfolio/Public/assets/resume.pdf" },
+    { name: "Resume", icon: <HiDocumentText size={40} color="#90EE90" />, url: "/My-Portfolio/assets/resume.pdf" },
     { name: "Instagram", icon: <FaInstagram size={40} color="#E1306C" />, url: "https://www.instagram.com/itzzzmesanchit/" },
   ];
 
