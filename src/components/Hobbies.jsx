@@ -27,13 +27,14 @@ export default function Hobbies() {
       ),
     },
     {
-      name: "Basketball",
+      
+      name: " Playing Basketball",
       description: "Playing basketball in free time.",
       icon: (
         <motion.div
           className="w-20 h-20 rounded-full bg-orange-500 flex items-center justify-center relative"
           animate={{ y: [0, -25, 0] }}
-          transition={{ duration: 0.8, repeat: Infinity, ease: "easeInOut" }}
+          transition={{ duration: 0.8, repeat: 10, ease: "easeInOut" }}
         >
           <motion.div
             className="w-5 h-5 rounded-full bg-black absolute bottom-2"
@@ -44,8 +45,8 @@ export default function Hobbies() {
       ),
     },
     {
-      name: "Cricket",
-      description: "Enjoy cricket matches and practice.",
+      name: "Watching Cricket",
+      description: "Enjoy watching cricket matches .",
       icon: (
         <motion.div className="w-24 h-12 relative">
           <motion.div

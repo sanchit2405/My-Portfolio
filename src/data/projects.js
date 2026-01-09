@@ -12,7 +12,7 @@ export const projects = [
       "Designed and deployed a dynamic Clean & Green Energy website with sleek glassmorphic UI, smooth animations, and interactive navigation.",
     tags: ["HTML", "CSS", "JS"],
     link: "https://sanchit2405.github.io/Clean-Green-Energy-/",
-    image: "assets/Clean n green energy.png", // 👈 image path
+    image: "dist/assets/Clean n green energy.png", // 👈 image path
   },
   {
     title: "Online Tutor Assistant",
